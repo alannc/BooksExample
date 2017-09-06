@@ -1,16 +1,22 @@
 package com.example.alumno.books;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.alumno.books.dummy.DummyContent;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
@@ -31,6 +37,8 @@ public class ItemDetailFragment extends Fragment {
      */
     private DummyContent.DummyItem mItem;
 
+    private FloatingActionButton fab;
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -38,10 +46,8 @@ public class ItemDetailFragment extends Fragment {
     public ItemDetailFragment() {
     }
 
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments().containsKey(ARG_ITEM_ID)) {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
@@ -51,8 +57,18 @@ public class ItemDetailFragment extends Fragment {
             Activity activity = this.getActivity();
             CollapsingToolbarLayout appBarLayout = (CollapsingToolbarLayout) activity.findViewById(R.id.toolbar_layout);
             if (appBarLayout != null) {
-                appBarLayout.setTitle(mItem.buyable_link);
+                appBarLayout.setTitle(mItem.book_name);
             }
+
+            FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("LINK", mItem.buyable_link);
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(mItem.buyable_link));
+                    startActivity(browserIntent);
+                }
+            });
         }
     }
 

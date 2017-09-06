@@ -64,8 +64,8 @@ public class DummyContent {
     }
 
     static {
-        addItem(new DummyItem("1", "Harry potter", "www.harrypotter.com", "https://ewedit.files.wordpress.com/2016/09/hpsorcstone.jpg"));
-        addItem(new DummyItem("2", "Tres Mosqueteros", "www.google.com", "https://images-na.ssl-images-amazon.com/images/I/51NQBEJ218L._SX317_BO1,204,203,200_.jpg"));
-        addItem(new DummyItem("3", "Android For Dummies", "www.android.com", "<https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JW18720301_android_phones_for_dummies.jpg"));
+        addItem(new DummyItem("1", "Harry potter", "http://www.harrypotter.com", "https://ewedit.files.wordpress.com/2016/09/hpsorcstone.jpg"));
+        addItem(new DummyItem("2", "Tres Mosqueteros", "http://www.google.com", "https://images-na.ssl-images-amazon.com/images/I/51NQBEJ218L._SX317_BO1,204,203,200_.jpg"));
+        addItem(new DummyItem("3", "Android For Dummies", "http://www.android.com", "<https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/JW18720301_android_phones_for_dummies.jpg"));
     }
 }
