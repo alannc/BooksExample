@@ -60,7 +60,7 @@ public class ItemDetailFragment extends Fragment {
                 appBarLayout.setTitle(mItem.book_name);
             }
 
-            FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
+            fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
